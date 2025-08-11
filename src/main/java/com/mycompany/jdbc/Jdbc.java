@@ -42,6 +42,13 @@ rs.close();
             }
             rs1.close();
 
+            // adding more query printing only name
+            ResultSet rs2=stmt.executeQuery("select emp_name from emp");
+            System.out.println("Printing Names");
+            while(rs2.next()){
+                System.out.println("Name:"+rs2.getString(1));
+            }
+            rs2.close();
 
 
             conn.close();
