@@ -29,11 +29,22 @@ public class Jdbc {
                System.out.println("Email:"+rs.getString(3)+"\n");
 //               System.out.println(rs.getString(4));
            }
-
+rs.close();
 //            System.out.println("✅ Connected successfully!");
-            conn.close();
 
-           //
+
+           // adding more query printing only emailid
+            ResultSet rs1=stmt.executeQuery("select emp_mail from emp");
+            System.out.println("Printing Mails");
+            while(rs1.next()){
+                System.out.println("Email:"+rs1.getString(1));
+
+            }
+            rs1.close();
+
+
+
+            conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
