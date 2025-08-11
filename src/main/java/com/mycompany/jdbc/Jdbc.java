@@ -40,15 +40,23 @@ rs.close();
                 System.out.println("Email:"+rs1.getString(1));
 
             }
+
             rs1.close();
 
             // adding more query printing only name
             ResultSet rs2=stmt.executeQuery("select emp_name from emp");
-            System.out.println("Printing Names");
+            System.out.println("\nPrinting Names");
             while(rs2.next()){
                 System.out.println("Name:"+rs2.getString(1));
             }
             rs2.close();
+
+            //printing id of the emp
+            ResultSet rs3=stmt.executeQuery("select emp_id from emp");
+            System.out.println("\nPrinting IDs");
+            while(rs3.next()){
+                System.out.println("Id:"+rs3.getString(1));
+            }
 
 
             conn.close();
